@@ -3,7 +3,7 @@ public class Kitty{
 	private int _age = 2;
 	public Kitty(String name, int age){
 		_age = age;
-		name = name;
+		_name = name;
 	}
 	public Kitty(){
 	}
@@ -18,5 +18,8 @@ public class Kitty{
 	}
 	public void makeOlder(){
 		_age++;
+	}
+	public String toString(){
+		return("The amazing "+_name);
 	}
 }
