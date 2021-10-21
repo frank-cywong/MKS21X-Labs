@@ -17,4 +17,12 @@ public class Kitty{
 	public int getAge(){
 		return _age;
 	}
+	public void changeName(String name){
+		if(!name.equals(" ")){
+			_name = name;
+		}
+	}
+	public void makeOlder(){
+		_age++;
+	}
 }
