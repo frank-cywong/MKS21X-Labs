@@ -11,4 +11,10 @@ public class Kitty{
 	}
 	public Kitty(){
 	}
+	public String getName(){
+		return _name;
+	}
+	public int getAge(){
+		return _age;
+	}
 }
