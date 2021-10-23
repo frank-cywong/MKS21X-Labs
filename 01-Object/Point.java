@@ -14,4 +14,7 @@ public class Point{
   public double getY(){
     return y;
   }
+  public static double distance(Point P1, Point P2){
+	  return(Math.sqrt(Math.pow(b.x-a.x,2)+Math.pow(b.y-a.y,2)));
+  }
 }
