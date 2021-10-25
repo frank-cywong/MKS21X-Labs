@@ -26,14 +26,20 @@ public class Triangle{
   public void setVertex(int v, Point p){
     switch(v){
       case 1:
-        v1 = p;
+        v1 = new Point(p);
+        return;
       case 2:
-        v2 = p;
+        v2 = new Point(p);
+        return;
       case 3:
-        v3 = p;
+        v3 = new Point(p);
+        return;
     }
   }
   public String toString(){
     return("{"+v1+", "+v2+", "+v3+"}");
+  }
+  public double getPerimeter(){
+    return (v1.distanceTo(v2) + v2.distanceTo(v3) + v3.distanceTo(v1));
   }
 }

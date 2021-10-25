@@ -12,8 +12,19 @@ public class Driver{
     System.out.println(t2.getVertex(3));
     System.out.println(t1);
     System.out.println(t2);
+    System.out.println(t1.getPerimeter()); // should be 12 (3,4,5)
+    System.out.println(t2.getPerimeter()); // should be 30 (5,12,13)
     t1.setVertex(1, new Point(0,3));
+    t2.setVertex(2, new Point(14,1));
     System.out.println(t1.getVertex(1));
     System.out.println(t1);
+    System.out.println(t2);
+    System.out.println(t1.getPerimeter()); // should be 12
+    System.out.println(t2.getPerimeter()); // should be 42 (13,14,15)
+    Triangle t3 = new Triangle(2,2,2,2,2,2);
+    t3.setVertex(1, new Point(0,0));
+    t3.setVertex(2, new Point(1,0));
+    t3.setVertex(3, new Point(1,1));
+    System.out.println(t3.getPerimeter()); // should be 2 + sqrt(2) ~= 3.414
   }
 }
