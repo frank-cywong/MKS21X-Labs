@@ -38,5 +38,8 @@ public class Driver{
 	System.out.println(Point.closeEnough(0.00002,0.0000099999)); // should be false
 	System.out.println((0.1 + 0.2) == 0.3); // should be false (floating point)
 	System.out.println(Point.closeEnough(0.1+0.2, 0.3)); // should be true
+	Point p2 = new Point(100,0);
+	System.out.println(p2.equals(new Point(100.0001,0))); // should be true
+	System.out.println(p2.equals(new Point(100,0.000000001))); // should be false
   }
 }

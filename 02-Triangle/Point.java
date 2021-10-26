@@ -28,4 +28,7 @@ public class Point{
 	  // if b is 0.001% greater than a, b/a = 1.00001, or a/b = 0.9999900001, if a is 0.001% less than b, b/a = 0.99999, to account for floating point errors, 0.999989999 is used instead
 	  return (a/b >= 0.999989999 && b/a >= 0.999989999);
   }
+  public boolean equals(Point p){
+	  return((p.x != 0 && x != 0 && closeEnough(p.x,x) || p.x == x) && (p.y != 0 && y != 0 && closeEnough(p.y,y) || p.y == y));
+  }
 }
