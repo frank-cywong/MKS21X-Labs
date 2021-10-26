@@ -51,7 +51,7 @@ public class Triangle{
 	  return(v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3));
   }
   public double area(){
-	  private double semiperimeter = getPerimeter / 2.0;
-	  return(Math.sqrt(semiperimeter*(semiperimeter-v1.distanceTo(v2))*(semiperimeter-v2.distanceTo(v3))*(semiperimeter*v3.distanceTo(v1))));
+	  double semiperimeter = getPerimeter() / 2.0;
+	  return(Math.sqrt(semiperimeter*(semiperimeter-v1.distanceTo(v2))*(semiperimeter-v2.distanceTo(v3))*(semiperimeter-v3.distanceTo(v1))));
   }
 }

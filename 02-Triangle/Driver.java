@@ -41,6 +41,8 @@ public class Driver{
 	Point p2 = new Point(100,0);
 	System.out.println(p2.equals(new Point(100.0001,0))); // should be true
 	System.out.println(p2.equals(new Point(100,0.000000001))); // should be false
-	System.out.println(t2.equals(new Triangle(0,1.000001,14,1,5,13)); // should be true
+	System.out.println(t2.equals(new Triangle(0,1.000001,14,1,5,13))); // should be true
+	System.out.println(t1.area()); // should be 6 (3,4,5)
+	System.out.println(t2.area()); // should be 84 (13,14,15)
   }
 }
