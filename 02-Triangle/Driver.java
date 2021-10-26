@@ -26,5 +26,9 @@ public class Driver{
     t3.setVertex(2, new Point(1,0));
     t3.setVertex(3, new Point(1,1));
     System.out.println(t3.getPerimeter()); // should be 2 + sqrt(2) ~= 3.414
+	Triangle t4 = new Triangle(0,0,2,0,1,Math.sqrt(3));
+	System.out.println(t4.getPerimeter()); // should be 6 (2,2,2)
+	Triangle t5 = new Triangle(0,0,1,0,0.5,2);
+	System.out.println(t5.getPerimeter()); // should be 1 + sqrt(17) ~= 5.sth (1,sqrt(17)/2,sqrt(17)/2)
   }
 }
