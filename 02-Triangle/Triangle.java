@@ -45,7 +45,8 @@ public class Triangle{
   public static boolean closeEnough(double a, double b){
 	  // if a is 0.001% greater than b, a/b = 1.00001, or b/a = 0.9999900001, if b is 0.001% less than a, a/b = 0.99999, to account for floating point errors, 0.999989999 is used instead
 	  // if b is 0.001% greater than a, b/a = 1.00001, or a/b = 0.9999900001, if a is 0.001% less than b, b/a = 0.99999, to account for floating point errors, 0.999989999 is used instead
-	  return (a/b >= 0.999989999 && b/a >= 0.999989999);
+	  // edit: changed this to work based on percent error
+	  return (Math.abs(a-b)/a <= 0.00001);
   }
   public boolean equals(Triangle other){
 	  return(v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3));
