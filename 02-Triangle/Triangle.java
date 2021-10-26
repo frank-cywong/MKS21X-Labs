@@ -54,4 +54,25 @@ public class Triangle{
 	  double semiperimeter = getPerimeter() / 2.0;
 	  return(Math.sqrt(semiperimeter*(semiperimeter-v1.distanceTo(v2))*(semiperimeter-v2.distanceTo(v3))*(semiperimeter-v3.distanceTo(v1))));
   }
+  public String classify(){
+	  int sides_equal = 0;
+	  if(closeEnough(v1.distanceTo(v2),v2.distanceTo(v3))){
+		  sides_equal++;
+	  }
+	  if(closeEnough(v2.distanceTo(v3),v3.distanceTo(v1))){
+		  sides_equal++;
+	  }
+	  if(closeEnough(v3.distanceTo(v1),v1.distanceTo(v2))){
+		  sides_equal++;
+	  }
+	  switch(sides_equal){
+		  case 3:
+			return "equilateral";
+		  case 1:
+			return "isosceles";
+		  case 0:
+			return "scalene";  
+	  }
+  return ""; // just to let it compile
+  }
 }

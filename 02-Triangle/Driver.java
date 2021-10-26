@@ -44,5 +44,13 @@ public class Driver{
 	System.out.println(t2.equals(new Triangle(0,1.000001,14,1,5,13))); // should be true
 	System.out.println(t1.area()); // should be 6 (3,4,5)
 	System.out.println(t2.area()); // should be 84 (13,14,15)
+	System.out.println(t3.area()); // should be 0.5 (1,1,sqrt(2))
+	System.out.println(t4.area()); // should be sqrt(3) ~= 1.7 (2,2,2)
+	System.out.println(t5.area()); // should be 1 (1,sqrt(17)/2,sqrt(17)/2)
+	System.out.println(t1.classify()); // should be scalene
+	System.out.println(t2.classify()); // should be scalene
+	System.out.println(t3.classify()); // should be isosceles
+	System.out.println(t4.classify()); // should be equilateral
+	System.out.println(t5.classify()); // should be isosceles
   }
 }
