@@ -30,5 +30,13 @@ public class Driver{
 	System.out.println(t4.getPerimeter()); // should be 6 (2,2,2)
 	Triangle t5 = new Triangle(0,0,1,0,0.5,2);
 	System.out.println(t5.getPerimeter()); // should be 1 + sqrt(17) ~= 5.sth (1,sqrt(17)/2,sqrt(17)/2)
+	System.out.println(Point.closeEnough(100,101)); // should be false
+	System.out.println(Point.closeEnough(100,99)); // should be false
+	System.out.println(Point.closeEnough(100,99.9999)); // should be true
+	System.out.println(Point.closeEnough(99.9999,100)); // should be true
+	System.out.println(Point.closeEnough(0.00001,0.0000099999)); // should be true
+	System.out.println(Point.closeEnough(0.00002,0.0000099999)); // should be false
+	System.out.println((0.1 + 0.2) == 0.3); // should be false (floating point)
+	System.out.println(Point.closeEnough(0.1+0.2, 0.3)); // should be true
   }
 }
