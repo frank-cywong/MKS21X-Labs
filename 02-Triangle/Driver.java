@@ -52,5 +52,14 @@ public class Driver{
 	System.out.println(t3.classify()); // should be isosceles
 	System.out.println(t4.classify()); // should be equilateral
 	System.out.println(t5.classify()); // should be isosceles
+  Triangle t6 = new Triangle(-18,10,-2,-2,-10+6*Math.sqrt(3),4+8*Math.sqrt(3)); // side length 20 equilateral triangle
+  System.out.println(t6.classify()); // should be equilateral
+  System.out.println(t6.area()); // should be 100sqrt(3) ~= 1.7 * 10^2
+  t6.setVertex(3,new Point(-13,0));
+  System.out.println(t6.classify()); // should be isosceles
+  System.out.println(t6.area()); // should be 50 (base: 20, height: 5)
+  System.out.println(t6.equals(null)); // should be false
+  System.out.println(t6.equals(t1)); // should be false
+  System.out.println(t6.equals(new Triangle(-18,10,-2,-2,-13,0))); // should be true
   }
 }
