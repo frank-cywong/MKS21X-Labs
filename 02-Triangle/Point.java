@@ -30,6 +30,9 @@ public class Point{
 	  return (Math.abs(a-b)/a <= 0.00001);
   }
   public boolean equals(Point p){
+    if(p == null){
+      return false;
+    }
 	  return((p.x != 0 && x != 0 && closeEnough(p.x,x) || p.x == x) && (p.y != 0 && y != 0 && closeEnough(p.y,y) || p.y == y));
   }
 }

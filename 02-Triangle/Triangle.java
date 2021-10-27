@@ -49,6 +49,9 @@ public class Triangle{
 	  return (Math.abs(a-b)/a <= 0.00001);
   }
   public boolean equals(Triangle other){
+    if (other == null){
+      return false;
+    }
 	  return(v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3));
   }
   public double area(){
@@ -72,7 +75,7 @@ public class Triangle{
 		  case 1:
 			return "isosceles";
 		  case 0:
-			return "scalene";  
+			return "scalene";
 	  }
   return ""; // just to let it compile
   }
