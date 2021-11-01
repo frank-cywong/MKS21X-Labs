@@ -9,8 +9,12 @@ public class Driver{
 		System.out.println(r1.getValue());
 		System.out.println(r1);
 		RationalNumber q1 = new RationalNumber(2,3);
-		RationalNumber q2 = new RationalNumber(74,28);
+		RationalNumber q2 = new RationalNumber(70,28);
 		System.out.println(q1);
 		System.out.println(q2);
+		System.out.println(q1.add(q2)); // should be 19/6
+		System.out.println(q1.subtract(q2)); // should be -11/6
+		System.out.println(q1.multiply(q2)); // should be 5/3
+		System.out.println(q1.divide(q2)); // should be 4/15
 	}
 }

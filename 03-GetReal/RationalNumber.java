@@ -9,6 +9,11 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber(int nume, int deno){
     super(0.0);//this value is ignored!
+    if(deno == 0){
+      numerator = 0;
+      denominator = 1;
+      return;
+    }
 	numerator = nume;
 	denominator = deno;
 	reduce();
@@ -61,6 +66,8 @@ public class RationalNumber extends RealNumber
     /*use euclids method or a better one*/
     //http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
 	int temp;
+  a = Math.abs(a);
+  b = Math.abs(b);
 	while(a != 0){
 		if(a < b){
 			temp = a;
@@ -109,4 +116,4 @@ public class RationalNumber extends RealNumber
   public RationalNumber subtract(RationalNumber other){
     return new RationalNumber(numerator*other.denominator-denominator*other.numerator,denominator*other.denominator);
   }
-} 
+}
