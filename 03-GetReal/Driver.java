@@ -16,5 +16,18 @@ public class Driver{
 		System.out.println(q1.subtract(q2)); // should be -11/6
 		System.out.println(q1.multiply(q2)); // should be 5/3
 		System.out.println(q1.divide(q2)); // should be 4/15
+		System.out.println(r2.add(q2)); // should be 10.5
+		System.out.println(r2.subtract(q2)); // should be 5.5
+		System.out.println(r2.multiply(q2)); // should be 20
+		System.out.println(r2.divide(q2)); // should be 3.2
+		System.out.println(q2.add(r2)); // should still be 10.5
+		System.out.println(q2.subtract(r2)); // should be -5.5
+		System.out.println(q2.multiply(r2)); // should still be 20
+		System.out.println(q2.divide(r2)); // should be 0.3125
+		System.out.println(q1.equals(new RationalNumber(1,2))); // should be false
+		System.out.println(q1.equals(new RationalNumber(6,9))); // should be true
+		System.out.println(q1.reciprocal()); // should be 3/2
+		System.out.println(new RationalNumber(3,0)); // should be 0/1
+		System.out.println((new RationalNumber(3,0)).reciprocal().equals(new RationalNumber(8,0))); // should be true due to how 0s are handled
 	}
 }
