@@ -11,6 +11,7 @@ public class RationalNumber extends RealNumber
     super(0.0);//this value is ignored!
 	numerator = nume;
 	denominator = deno;
+	reduce();
   }
 
   public double getValue(){
@@ -77,33 +78,35 @@ public class RationalNumber extends RealNumber
   *reduced after construction.
   */
   private void reduce(){
-
+	int gcd = gcd(numerator,denominator);
+	numerator /= gcd;
+	denominator /= gcd;
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**
   *Return a new RationalNumber that is the product of this and the other
   */
   public RationalNumber multiply(RationalNumber other){
-    return null;
+    return new RationalNumber(numerator*other.numerator,denominator*other.denominator);
   }
 
   /**
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return null;
+    return new RationalNumber(numerator*other.denominator,denominator*other.numerator);
   }
 
   /**
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    return null;
+    return new RationalNumber(numerator*other.denominator+denominator*other.numerator,denominator*other.denominator);
   }
   /**
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return null;
+    return new RationalNumber(numerator*other.denominator-denominator*other.numerator,denominator*other.denominator);
   }
 } 
