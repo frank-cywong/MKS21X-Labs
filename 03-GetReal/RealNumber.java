@@ -46,4 +46,19 @@ public class RealNumber{
   public String toString(){
     return ""+value;
   }
+
+  int compareTo(RealNumber other){
+    if(getValue() == other.getValue()){
+      return 0;
+    }
+    if(getValue() > other.getValue()){
+      return 1;
+    } else {
+      return -1;
+    }
+  }
+
+  boolean equals(RealNumber other){
+    return(getValue() == other.getValue());
+  }
 }
