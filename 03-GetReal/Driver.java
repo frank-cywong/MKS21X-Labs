@@ -49,5 +49,7 @@ public class Driver{
 					break;
 			}
 		}
+		System.out.println(new RealNumber(0.5).equals(new RationalNumber(1,2))); // should be true
+		System.out.println(new RealNumber(0).equals(new RationalNumber(1,3))); // should be false
 	}
 }
