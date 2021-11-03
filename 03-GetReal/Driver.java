@@ -29,5 +29,6 @@ public class Driver{
 		System.out.println(q1.reciprocal()); // should be 3/2
 		System.out.println(new RationalNumber(3,0)); // should be 0/1
 		System.out.println((new RationalNumber(3,0)).reciprocal().equals(new RationalNumber(8,0))); // should be true due to how 0s are handled
+		System.out.println(new RationalNumber(0,2).equals(new RationalNumber(0,1))); // should be equal
 	}
 }
