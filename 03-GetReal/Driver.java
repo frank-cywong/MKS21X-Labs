@@ -30,5 +30,24 @@ public class Driver{
 		System.out.println(new RationalNumber(3,0)); // should be 0/1
 		System.out.println((new RationalNumber(3,0)).reciprocal().equals(new RationalNumber(8,0))); // should be true due to how 0s are handled
 		System.out.println(new RationalNumber(0,2).equals(new RationalNumber(0,1))); // should be equal
+		double a,b;
+		RealNumber ra,rb;
+		for(int i = 0; i < 15; i++){
+			a = Math.random()*5;
+			b = Math.random()*5;
+			ra = new RealNumber(a);
+			rb = new RealNumber(b);
+			switch(ra.compareTo(rb)){
+				case(-1):
+					System.out.println(a < b ?"Correct":"Incorrect");
+					break;
+				case(0):
+					System.out.println(a == b ?"Correct":"Incorrect");
+					break;
+				case(1):
+					System.out.println(a > b ?"Correct":"Incorrect");
+					break;
+			}
+		}
 	}
 }
