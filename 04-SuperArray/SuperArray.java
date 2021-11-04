@@ -21,6 +21,13 @@ public class SuperArray{
   }
   public String toString(){
 	  String output = "{";
+	  for(int i = 0; i < size; i++){
+		  if(i != 0){
+			  output += ", ";
+		  }
+		  output += data[i];
+	  }
+	  output += "}";
 	  return output;
   }
   public String toStringDebug(){
