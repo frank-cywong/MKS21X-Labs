@@ -58,7 +58,7 @@ public class SuperArray{
   }
   public String set(int i, String val){
 	  if(i < 0 || i >= size){
-		  System.out.println("Error: SuperArray.get() called with invalid i = "+i);
+		  System.out.println("Error: SuperArray.set() called with invalid i = "+i);
 		  return null;
 	  }
 	  String old = data[i];
