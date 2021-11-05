@@ -39,5 +39,15 @@ public class Driver{
 		System.out.println(SA.toStringDebug());
 		SA.add("test11");
 		System.out.println(SA.toStringDebug());
+		SuperArray SA2 = new SuperArray(0);
+		System.out.println(SA2);
+		System.out.println(SA2.toStringDebug());
+		for(int i = 0; i < 10; i++){
+			SA2.add("test2-"+i);
+			System.out.println(SA2.toStringDebug());
+		}
+		for(int i = 0; i < SA2.size(); i++){
+			System.out.println(SA2.get(i));
+		}
 	}
 }
