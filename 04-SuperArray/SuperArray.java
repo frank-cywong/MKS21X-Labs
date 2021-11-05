@@ -16,12 +16,13 @@ public class SuperArray{
 	  }
 	  data = temp;
   }
-  public void add(String temp){
+  public boolean add(String temp){
     if(size >= data.length){
       resize();
     }
     data[size] = temp;
     size++;
+    return true;
   }
   public int size(){
 	  return size;
