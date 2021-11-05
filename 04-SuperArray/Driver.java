@@ -49,5 +49,9 @@ public class Driver{
 		for(int i = 0; i < SA2.size(); i++){
 			System.out.println(SA2.get(i));
 		}
+		for(int i = 0; i < SA2.size(); i++){
+			SA2.set(i,"test3-"+i*2);
+		}
+		System.out.println(SA2.toStringDebug());
 	}
 }
