@@ -6,6 +6,9 @@ public class SuperArray{
     size = 0;
   }
   public SuperArray(int capacity){
+    if(capacity < 0){
+      capacity = 0;
+    }
     data = new String[capacity];
     size = 0;
   }
