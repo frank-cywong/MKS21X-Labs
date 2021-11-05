@@ -41,4 +41,20 @@ public class SuperArray{
 	  output += "}";
 	  return output;
   }
+  public String get(int i){
+	  if(i < 0 || i >= size){
+		  System.out.println("Error: SuperArray.get() called with invalid i = "+i);
+		  return null;
+	  }
+	  return data[i];
+  }
+  public String set(int i, String val){
+	  if(i < 0 || i >= size){
+		  System.out.println("Error: SuperArray.get() called with invalid i = "+i);
+		  return null;
+	  }
+	  String old = data[i];
+	  data[i] = val;
+	  return old;
+  }
 }
