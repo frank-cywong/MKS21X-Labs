@@ -11,11 +11,11 @@ public class Driver{
 		System.out.println(SA.toStringDebug());
 		System.out.println(SA.size());
 		System.out.println(SA.get(1)); // test2
-		System.out.println(SA.get(-1)); // should print error, return null
-		System.out.println(SA.get(3)); // should print error, return null
-		System.out.println(SA.set(-1,"test4")); // should print error, return null
+		//System.out.println(SA.get(-1)); // should print error, return null
+		//System.out.println(SA.get(3)); // should print error, return null
+		//System.out.println(SA.set(-1,"test4")); // should print error, return null
 		System.out.println(SA.set(0,"test4")); // test
-		System.out.println(SA.set(3,"test5")); // should print error, return null
+		//System.out.println(SA.set(3,"test5")); // should print error, return null
 		System.out.println(SA.toStringDebug()); // [test4, test2, test3, null...]
 		for(int i = 0; i < 7; i++){
 			SA.add("q");
@@ -63,7 +63,10 @@ public class Driver{
 			System.out.println(SA2.add("test4-"+i*3));
 		}
 		System.out.println(SA2.toStringDebug());
-		while(SA2.remove(0) != null){}
-		System.out.println(SA2.toStringDebug());
+		//while(SA2.remove(0) != null){} - should cause error but successfully clear SuperArray
+		while(SA2.size() > 0){
+			SA2.remove(0);
+		}
+		System.out.println(SA2.toStringDebug()); // should be empty
 	}
 }
