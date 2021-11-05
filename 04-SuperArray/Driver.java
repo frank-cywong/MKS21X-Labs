@@ -53,5 +53,17 @@ public class Driver{
 			SA2.set(i,"test3-"+i*2);
 		}
 		System.out.println(SA2.toStringDebug());
+		System.out.println(SA2.remove(2));
+		System.out.println(SA2.toStringDebug());
+		while(SA2.size() > 2){
+			System.out.println(SA2.remove(0));
+		}
+		System.out.println(SA2.toStringDebug());
+		for(int i = SA2.size(); i < 8; i++){
+			System.out.println(SA2.add("test4-"+i*3));
+		}
+		System.out.println(SA2.toStringDebug());
+		while(SA2.remove(0) != null){}
+		System.out.println(SA2.toStringDebug());
 	}
 }
