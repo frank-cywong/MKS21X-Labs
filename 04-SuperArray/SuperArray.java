@@ -9,9 +9,16 @@ public class SuperArray{
     data = new String[capacity];
     size = 0;
   }
+  private void resize(){
+	  String[] temp = new String[data.length*2+1];
+	  for(int i = 0; i < data.length; i++){
+		  temp[i] = data[i];
+	  }
+	  data = temp;
+  }
   public void add(String temp){
     if(size >= data.length){
-      //resize(); code this in later
+      resize();
     }
     data[size] = temp;
     size++;

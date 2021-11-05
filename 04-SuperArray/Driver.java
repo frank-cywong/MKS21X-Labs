@@ -37,5 +37,7 @@ public class Driver{
 			SA.set(i, SA.get(i+1));
 		}
 		System.out.println(SA.toStringDebug());
+		SA.add("test11");
+		System.out.println(SA.toStringDebug());
 	}
 }
