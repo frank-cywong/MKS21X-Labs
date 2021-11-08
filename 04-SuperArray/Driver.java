@@ -98,5 +98,14 @@ public class Driver{
 		System.out.println(SA2.toStringDebug());
 		SA2.add(3,"val3");
 		System.out.println(SA2.toStringDebug());
+		System.out.println(SA);
+		for(int i = 0; i < 10; i++){
+			SA.remove("looptest"+i);
+		}
+		System.out.println(SA);
+		for(int i = 0; i < 10; i++){
+			SA.add(0,"looptest2."+i);
+		}
+		System.out.println(SA);
 	}
 }
