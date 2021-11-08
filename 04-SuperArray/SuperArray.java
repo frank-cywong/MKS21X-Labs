@@ -43,6 +43,14 @@ public class SuperArray{
     size--;
     return temp;
   }
+  public boolean remove(String s){
+	  int index = indexOf(s);
+	  if(index < 0){
+		  return false;
+	  }
+	  String temp = remove(index);
+	  return(temp != null);
+  }
   public int size(){
 	  return size;
   }

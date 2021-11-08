@@ -76,5 +76,8 @@ public class Driver{
 		System.out.println(SA.lastIndexOf("looptest4")); // 11
 		System.out.println(SA.lastIndexOf("looptest3")); // 2
 		System.out.println(SA.lastIndexOf("null")); // -1
+		System.out.println(SA.remove("looptest4")); // true
+		System.out.println(SA.remove("looptest4")); // true
+		System.out.println(SA.remove("looptest4")); // false
 	}
 }
