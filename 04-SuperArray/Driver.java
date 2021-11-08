@@ -68,5 +68,13 @@ public class Driver{
 			SA2.remove(0);
 		}
 		System.out.println(SA2.toStringDebug()); // should be empty
+		SA.add("looptest4");
+		System.out.println(SA);
+		System.out.println(SA.indexOf("looptest4")); // 3
+		System.out.println(SA.indexOf("looptest3")); // 2
+		System.out.println(SA.indexOf("test")); // -1
+		System.out.println(SA.lastIndexOf("looptest4")); // 11
+		System.out.println(SA.lastIndexOf("looptest3")); // 2
+		System.out.println(SA.lastIndexOf("null")); // -1
 	}
 }
