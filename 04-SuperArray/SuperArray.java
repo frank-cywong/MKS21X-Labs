@@ -46,6 +46,22 @@ public class SuperArray{
   public int size(){
 	  return size;
   }
+  public int indexOf(String s){
+	  for(int i = 0; i < size; i++){
+		  if(data[i].equals(s)){
+			  return i;
+		  }
+	  }
+	  return -1;
+  }
+  public int lastIndexOf(String s){
+	  for(int i = size - 1; i >= 0; i--){
+		  if(data[i].equals(s)){
+			  return i;
+		  }
+	  }
+	  return -1;
+  }
   public String toString(){
 	  String output = "{";
 	  for(int i = 0; i < size; i++){
