@@ -85,5 +85,18 @@ public class Driver{
 		System.out.println(SA.toStringDebug());
 		SA.add(SA.size(),"endaddtest");
 		System.out.println(SA.toStringDebug());
+		SA2 = new SuperArray(0);
+		System.out.println(SA2.toStringDebug());
+		//SA2.add(1,"errortest2"); // should print error
+		SA2.add(0,"val0");
+		System.out.println(SA2.toStringDebug());
+		SA2.add(1,"val1");
+		System.out.println(SA2.toStringDebug());
+		SA2.add(2,"val2");
+		System.out.println(SA2.toStringDebug());
+		SA2.add(3,"val4");
+		System.out.println(SA2.toStringDebug());
+		SA2.add(3,"val3");
+		System.out.println(SA2.toStringDebug());
 	}
 }
