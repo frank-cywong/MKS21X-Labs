@@ -79,5 +79,11 @@ public class Driver{
 		System.out.println(SA.remove("looptest4")); // true
 		System.out.println(SA.remove("looptest4")); // true
 		System.out.println(SA.remove("looptest4")); // false
+		System.out.println(SA);
+		//SA.add(-1,"errortest"); // should print error
+		SA.add(3,"addtest4");
+		System.out.println(SA.toStringDebug());
+		SA.add(SA.size(),"endaddtest");
+		System.out.println(SA.toStringDebug());
 	}
 }
