@@ -27,6 +27,19 @@ public class SuperArray{
     size++;
     return true;
   }
+  public void add(int index, String s){
+	  if(index < 0 || index > size){
+		  System.out.println("Error: SuperArray.add(int index, String s) called with invalid index = "+index);
+		  return;
+	  }
+	  if(size == data.length){
+		  resize();
+	  }
+	  for(int i = size; i > index; i--){
+		  data[i] = data[i-1];
+	  }
+	  data[index] = s;
+  }
   public String remove(int index){
     if(index < 0 || index >= size){
       System.out.println("Error: SuperArray.remove() called with invalid i = "+index);
