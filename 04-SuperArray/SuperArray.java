@@ -7,7 +7,7 @@ public class SuperArray{
   }
   public SuperArray(int capacity){
     if(capacity < 0){
-      capacity = 0;
+      throw new NegativeArraySizeException("Error: Attempted to initialise SuperArray with negative size = "+capacity);
     }
     data = new String[capacity];
     size = 0;
@@ -29,8 +29,7 @@ public class SuperArray{
   }
   public void add(int index, String s){
 	  if(index < 0 || index > size){
-		  System.out.println("Error: SuperArray.add(int index, String s) called with invalid index = "+index);
-		  return;
+		  throw new IndexOutOfBoundsException("Error: SuperArray.add(int index, String s) called with invalid index = "+index);
 	  }
 	  if(size == data.length){
 		  resize();
@@ -43,8 +42,7 @@ public class SuperArray{
   }
   public String remove(int index){
     if(index < 0 || index >= size){
-      System.out.println("Error: SuperArray.remove() called with invalid i = "+index);
-      return null;
+      throw new IndexOutOfBoundsException("Error: SuperArray.remove() called with invalid i = "+index);
     }
     String temp = data[index];
     for(int i = index; i < size; i++) {
@@ -108,15 +106,13 @@ public class SuperArray{
   }
   public String get(int i){
 	  if(i < 0 || i >= size){
-		  System.out.println("Error: SuperArray.get() called with invalid i = "+i);
-		  return null;
+		  throw new IndexOutOfBoundsException("Error: SuperArray.get() called with invalid i = "+i);
 	  }
 	  return data[i];
   }
   public String set(int i, String val){
 	  if(i < 0 || i >= size){
-		  System.out.println("Error: SuperArray.set() called with invalid i = "+i);
-		  return null;
+		  throw new IndexOutOfBoundsException("Error: SuperArray.set() called with invalid i = "+i);
 	  }
 	  String old = data[i];
 	  data[i] = val;
