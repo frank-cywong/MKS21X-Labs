@@ -85,25 +85,25 @@ public class SuperArray{
 	  return -1;
   }
   public String toString(){
-	  String output = "{";
+	  String output = "[";
 	  for(int i = 0; i < size; i++){
 		  if(i != 0){
 			  output += ", ";
 		  }
 		  output += data[i];
 	  }
-	  output += "}";
+	  output += "]";
 	  return output;
   }
   public String toStringDebug(){
-	  String output = "{";
+	  String output = "[";
 	  for(int i = 0; i < data.length; i++){
 		  if(i != 0){
 			  output += ", ";
 		  }
 		  output += data[i];
 	  }
-	  output += "}";
+	  output += "]";
 	  return output;
   }
   public String get(int i){
