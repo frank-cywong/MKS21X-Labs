@@ -7,7 +7,7 @@ public class SuperArray{
   }
   public SuperArray(int capacity){
     if(capacity < 0){
-      throw new NegativeArraySizeException("Error: Attempted to initialise SuperArray with negative size = "+capacity);
+      throw new IllegalArgumentException("Error: Attempted to initialise SuperArray with negative size = "+capacity);
     }
     data = new String[capacity];
     size = 0;
@@ -61,7 +61,7 @@ public class SuperArray{
 		  return false;
 	  }
 	  String temp = remove(index);
-	  return(temp != null);
+	  return true;
   }
   public int size(){
 	  return size;
