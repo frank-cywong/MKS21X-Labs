@@ -90,5 +90,22 @@ public class ArrayListPractice{
 		if(!mixLists(t3,t).equals(t3)){
 			System.out.println("Error 7");
 		}
+		ArrayList<String> t4 = new ArrayList<String>();
+		ArrayList<String> t5 = new ArrayList<String>();
+		for(int i = 0; i < 200000; i++){
+			if(Math.random() < 0.9){
+				t4.add(""+i);
+			} else {
+				t4.add("");
+			}
+			t5.add(""+(2*i));
+		}
+		System.out.println("replaceEmpty start");
+		replaceEmpty(t4);
+		System.out.println("replaceEmpty end, makeReversedList start");
+		makeReversedList(t4);
+		System.out.println("makeReversedList start, mixLists end");
+		mixLists(t4,t5);
+		System.out.println("mixLists end");
 	}
 }
