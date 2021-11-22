@@ -25,6 +25,7 @@ public class Triangles {
 				}
 			}
 			System.out.println(output);
+			input.close();
 		} catch (FileNotFoundException e){
 			System.out.println("File "+filename+" not found");
 		}
