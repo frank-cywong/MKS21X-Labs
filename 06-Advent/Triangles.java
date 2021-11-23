@@ -20,7 +20,7 @@ public class Triangles {
 					output++;
 				}
 			}
-			System.out.println("Part 1: "+output);
+			System.out.println(output);
 			input.close();
 		} catch (FileNotFoundException e){
 			System.out.println("File "+filename+" not found");
@@ -39,21 +39,21 @@ public class Triangles {
 				for(int n = 0; n < 3; n++){
 					if(isTriangle(temp[n],temp[n+3],temp[n+6])){
 						output++;
-					} 
+					}
 				}
 			}
-			System.out.println("Part 2: "+output);
+			System.out.println(output);
 			input.close();
 		} catch (FileNotFoundException e){
 			System.out.println("File "+filename+" not found");
 		}
 	}
 	public static void main(String[] args){
-		String filename = "Triangle.in";
-		if(args.length > 0){ // for testing purposes
-			filename = args[0];
+		String filename = args[0];
+		if(args[1].equals("1")){
+			method1(filename);
+		} else if (args[1].equals("2")){
+			method2(filename);
 		}
-		method1(filename);
-		method2(filename);
 	}
 }
