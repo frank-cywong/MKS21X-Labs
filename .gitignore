@@ -24,3 +24,6 @@ hs_err_pid*
 
 # Nano save files
 *.save
+
+# Backup files
+*.bak
