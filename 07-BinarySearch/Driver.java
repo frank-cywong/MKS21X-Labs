@@ -8,7 +8,7 @@ public class Driver{
     System.out.println(BinarySearch.binarySearch(new int[]{-1,-1,-1,0,1,1,1},1)); // should be 5
     System.out.println(BinarySearch.binarySearch(new int[]{-1,-1,-1,0,1,1,1},-2)); // should be -1
     int[] temp;
-    int ans;
+    int ans, size;
     for(int i = 0; i < 10; i++){
       temp = new int[i];
       for(int j = 0; j < i; j++){
@@ -23,6 +23,13 @@ public class Driver{
           continue; // correct
         }
         System.out.println("Error in case: "+Arrays.toString(temp)+", j = "+j);
+      }
+    }
+    for(int i = 0; i < 100; i++){
+      size = (int)(Math.random()*11);
+      temp = new int[size];
+      for(int j = 0; j < size; j++){
+        temp[j] = (int)(Math.random()*101)-50;
       }
     }
   }
