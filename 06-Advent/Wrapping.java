@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
-public class Wrapper{
+public class Wrapping{
 	public static int surfacearea(int a, int b, int c){
 		int sa, sb, sc;
 		sa = a * b;
