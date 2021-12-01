@@ -8,6 +8,13 @@ public class Driver{
     }
     return true;
   }
+  public static int[] randomArray(){
+    int[] temp = new int[20];
+    for(int i = 0; i < 20; i++){
+      temp[i] = (int)(Math.random() * 100);
+    }
+    return temp;
+  }
   public static void main(String[] args){
     int[] t1 = {3,-1,0,1,2};
     int[] t2 = {1,2,3,4};
@@ -21,6 +28,7 @@ public class Driver{
     int[] t10 = new int[200];
     int temp = 2021;
     int temp2 = 6171;
+    int[] tempa;
     for(int i = 0; i < 50; i++){ // basically collatz conjecture
       t5[i] = temp;
       temp = (temp % 2 == 0 ? temp / 2 : (temp * 3 + 1));
@@ -55,5 +63,12 @@ public class Driver{
     Sorts.bubbleSort(t10);
     //System.out.println(Arrays.toString(t10));
     System.out.println(isSorted(t10));
+    for(int i = 0; i < 100; i++){
+      tempa = randomArray();
+      Sorts.bubbleSort(tempa);
+      if(!isSorted(tempa)){
+        System.out.println("Error in test case for: "+Arrays.toString(tempa));
+      }
+    }
   }
 }
