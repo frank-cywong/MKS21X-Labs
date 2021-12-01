@@ -18,10 +18,16 @@ public class Driver{
     int[] t7 = {1};
     int[] t8 = {0,1};
     int[] t9 = {1,0};
+    int[] t10 = new int[200];
     int temp = 2021;
+    int temp2 = 6171;
     for(int i = 0; i < 50; i++){ // basically collatz conjecture
       t5[i] = temp;
       temp = (temp % 2 == 0 ? temp / 2 : (temp * 3 + 1));
+    }
+    for(int i = 0; i < 200; i++){
+      t10[i] = temp2;
+      temp2 = (temp2 % 2 == 0 ? temp2 / 2 : (temp2 * 3 + 1));
     }
     Sorts.bubbleSort(t1);
     System.out.println(Arrays.toString(t1)); // -1,0,1,2,3
@@ -44,5 +50,10 @@ public class Driver{
     System.out.println(Arrays.toString(t8)); // {0,1}
     Sorts.bubbleSort(t9);
     System.out.println(Arrays.toString(t9)); // {1,0}
+    //System.out.println(Arrays.toString(t10));
+    System.out.println(isSorted(t10));
+    Sorts.bubbleSort(t10);
+    //System.out.println(Arrays.toString(t10));
+    System.out.println(isSorted(t10));
   }
 }
