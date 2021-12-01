@@ -14,6 +14,10 @@ public class Driver{
     int[] t3 = {-10,11,-11,10};
     int[] t4 = {5,4,3,2,1};
     int[] t5 = new int[50];
+    int[] t6 = {};
+    int[] t7 = {1};
+    int[] t8 = {0,1};
+    int[] t9 = {1,0};
     int temp = 2021;
     for(int i = 0; i < 50; i++){ // basically collatz conjecture
       t5[i] = temp;
@@ -32,5 +36,13 @@ public class Driver{
     Sorts.bubbleSort(t5);
     //System.out.println(Arrays.toString(t5));
     System.out.println(isSorted(t5));
+    Sorts.bubbleSort(t6);
+    System.out.println(Arrays.toString(t6)); // {}
+    Sorts.bubbleSort(t7);
+    System.out.println(Arrays.toString(t7)); // {1}
+    Sorts.bubbleSort(t8);
+    System.out.println(Arrays.toString(t8)); // {0,1}
+    Sorts.bubbleSort(t9);
+    System.out.println(Arrays.toString(t9)); // {1,0}
   }
 }
