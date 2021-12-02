@@ -1,5 +1,13 @@
 import java.util.Arrays;
 public class Driver{
+  public static void testCase(int[] a){
+    int[] b = a.clone();
+    Arrays.sort(a);
+    Sorts.bubbleSort(b);
+    if(!Arrays.equals(a,b)){
+      System.out.println("Error in test case: "+Arrays.toString(a));
+    }
+  }
   public static boolean isSorted(int[] a){
     for(int i = 0; i < (a.length - 1); i++){
       if(a[i] > a[i+1]){
@@ -11,7 +19,7 @@ public class Driver{
   public static int[] randomArray(){
     int[] temp = new int[20];
     for(int i = 0; i < 20; i++){
-      temp[i] = (int)(Math.random() * 100);
+      temp[i] = (int)(Math.random() * 100)-50;
     }
     return temp;
   }
@@ -26,6 +34,8 @@ public class Driver{
     int[] t8 = {0,1};
     int[] t9 = {1,0};
     int[] t10 = new int[200];
+    int[] t11 = {3,3,3,3,3,3,3};
+    int[] t12 = {3,3,3,2,4,3,3,3,4,5};
     int temp = 2021;
     int temp2 = 6171;
     int[] tempa;
@@ -37,6 +47,7 @@ public class Driver{
       t10[i] = temp2;
       temp2 = (temp2 % 2 == 0 ? temp2 / 2 : (temp2 * 3 + 1));
     }
+    /*
     Sorts.bubbleSort(t1);
     System.out.println(Arrays.toString(t1)); // -1,0,1,2,3
     Sorts.bubbleSort(t2);
@@ -63,12 +74,25 @@ public class Driver{
     Sorts.bubbleSort(t10);
     //System.out.println(Arrays.toString(t10));
     System.out.println(isSorted(t10));
+    */
+    // Using new test method
+    testCase(t1);
+    testCase(t2);
+    testCase(t3);
+    testCase(t4);
+    testCase(t5);
+    testCase(t6);
+    testCase(t7);
+    testCase(t8);
+    testCase(t9);
+    testCase(t10);
+    testCase(t11);
+    testCase(t12);
+    System.out.println("Fixed test cases tested");
     for(int i = 0; i < 100; i++){
       tempa = randomArray();
-      Sorts.bubbleSort(tempa);
-      if(!isSorted(tempa)){
-        System.out.println("Error in test case for: "+Arrays.toString(tempa));
-      }
+      testCase(tempa);
     }
+    System.out.println("Randomised test cases tested");
   }
 }
