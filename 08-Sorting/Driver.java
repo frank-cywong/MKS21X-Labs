@@ -16,10 +16,10 @@ public class Driver{
     }
     return true;
   }
-  public static int[] randomArray(){
-    int[] temp = new int[20];
-    for(int i = 0; i < 20; i++){
-      temp[i] = (int)(Math.random() * 100)-50;
+  public static int[] randomArray(int range, int size){
+    int[] temp = new int[size];
+    for(int i = 0; i < size; i++){
+      temp[i] = (int)(Math.random() * range)-(range / 2);
     }
     return temp;
   }
@@ -90,7 +90,15 @@ public class Driver{
     testCase(t12);
     System.out.println("Fixed test cases tested");
     for(int i = 0; i < 100; i++){
-      tempa = randomArray();
+      tempa = randomArray(100,20);
+      testCase(tempa);
+    }
+    for(int i = 0; i < 100; i++){
+      tempa = randomArray(10,100);
+      testCase(tempa);
+    }
+    for(int i = 0; i < 100; i++){
+      tempa = randomArray((int)(Math.random()*1000),(int)(Math.random()*1000));
       testCase(tempa);
     }
     System.out.println("Randomised test cases tested");
