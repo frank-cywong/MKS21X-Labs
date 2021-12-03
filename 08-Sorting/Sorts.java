@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Sorts{
   public static void bubbleSort(int[] data){
     int temp;
@@ -15,6 +16,24 @@ public class Sorts{
       if(!swap){
         return;
       }
+    }
+    return;
+  }
+  public static void selectionSort(int[] data){
+    int tmin, tminl;
+    System.out.println(Arrays.toString(data));
+    for(int i = 0; i < (data.length - 1); i++){
+      tmin = data[i];
+      tminl = i;
+      for(int j = (i + 1); j < data.length; j++){
+        if(data[j] < tmin){
+          tmin = data[j];
+          tminl = j;
+        }
+      }
+      data[tminl] = data[i];
+      data[i] = tmin;
+      System.out.println(Arrays.toString(data));
     }
     return;
   }

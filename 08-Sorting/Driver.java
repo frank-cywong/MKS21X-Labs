@@ -36,6 +36,7 @@ public class Driver{
     int[] t10 = new int[200];
     int[] t11 = {3,3,3,3,3,3,3};
     int[] t12 = {3,3,3,2,4,3,3,3,4,5};
+    int[] t13 = {7,5,4,2}; 
     int temp = 2021;
     int temp2 = 6171;
     int[] tempa;
@@ -88,6 +89,8 @@ public class Driver{
     testCase(t10);
     testCase(t11);
     testCase(t12);
+    //testCase(t13);
+    Sorts.selectionSort(t13);
     System.out.println("Fixed test cases tested");
     for(int i = 0; i < 100; i++){
       tempa = randomArray(100,20);
