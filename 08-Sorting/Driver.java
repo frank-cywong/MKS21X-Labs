@@ -2,10 +2,15 @@ import java.util.Arrays;
 public class Driver{
   public static void testCase(int[] a){
     int[] b = a.clone();
+    int[] c = a.clone();
     Arrays.sort(a);
     Sorts.bubbleSort(b);
+    Sorts.selectionSort(c);
     if(!Arrays.equals(a,b)){
-      System.out.println("Error in test case: "+Arrays.toString(a));
+      System.out.println("Error in test case for bubble sort: "+Arrays.toString(a));
+    }
+    if(!Arrays.equals(a,c)){
+      System.out.println("Error in test case for selection sort: "+Arrays.toString(a));
     }
   }
   public static boolean isSorted(int[] a){
@@ -90,10 +95,10 @@ public class Driver{
     testCase(t10);
     testCase(t11);
     testCase(t12);
-    //testCase(t13);
-    Sorts.selectionSort(t13);
-    //testCase(t14);
-    Sorts.selectionSort(t14);
+    testCase(t13);
+    //Sorts.selectionSort(t13);
+    testCase(t14);
+    //Sorts.selectionSort(t14);
     System.out.println("Fixed test cases tested");
     for(int i = 0; i < 100; i++){
       tempa = randomArray(100,20);

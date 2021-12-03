@@ -21,7 +21,7 @@ public class Sorts{
   }
   public static void selectionSort(int[] data){
     int tmin, tminl;
-    System.out.println(Arrays.toString(data));
+    //System.out.println(Arrays.toString(data));
     for(int i = 0; i < (data.length - 1); i++){
       tmin = data[i];
       tminl = i;
@@ -33,7 +33,7 @@ public class Sorts{
       }
       data[tminl] = data[i];
       data[i] = tmin;
-      System.out.println(Arrays.toString(data));
+      //System.out.println(Arrays.toString(data));
     }
     return;
   }
