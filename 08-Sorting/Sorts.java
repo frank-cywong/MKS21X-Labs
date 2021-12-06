@@ -37,4 +37,18 @@ public class Sorts{
     }
     return;
   }
+  public static void insertionSort(int[] data){
+    int cur, j, temp;
+    for(int i = 0; i < data.length; i++){
+      cur = data[i];
+      j = i;
+      while(j > 0 && data[j-1] > cur){
+        data[j] = data[j-1];
+        j--;
+      }
+      data[j] = cur;
+      System.out.println(Arrays.toString(data));
+    }
+    return;
+  }
 }
