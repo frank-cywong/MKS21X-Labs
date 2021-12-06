@@ -3,14 +3,19 @@ public class Driver{
   public static void testCase(int[] a){
     int[] b = a.clone();
     int[] c = a.clone();
+    int[] d = a.clone();
     Arrays.sort(a);
     Sorts.bubbleSort(b);
     Sorts.selectionSort(c);
+    Sorts.insertionSort(d);
     if(!Arrays.equals(a,b)){
       System.out.println("Error in test case for bubble sort: "+Arrays.toString(a));
     }
     if(!Arrays.equals(a,c)){
       System.out.println("Error in test case for selection sort: "+Arrays.toString(a));
+    }
+    if(!Arrays.equals(a,d)){
+      System.out.println("Error in test case for insertion sort: "+Arrays.toString(a));
     }
   }
   public static boolean isSorted(int[] a){
@@ -100,7 +105,8 @@ public class Driver{
     //Sorts.selectionSort(t13);
     testCase(t14);
     //Sorts.selectionSort(t14);
-    Sorts.insertionSort(t15);
+    testCase(t15);
+    //Sorts.insertionSort(t15);
     System.out.println("Fixed test cases tested");
     for(int i = 0; i < 100; i++){
       tempa = randomArray(100,20);

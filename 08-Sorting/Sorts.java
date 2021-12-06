@@ -1,4 +1,4 @@
-import java.util.Arrays;
+//import java.util.Arrays;
 public class Sorts{
   public static void bubbleSort(int[] data){
     int temp;
@@ -47,7 +47,7 @@ public class Sorts{
         j--;
       }
       data[j] = cur;
-      System.out.println(Arrays.toString(data));
+      //System.out.println(Arrays.toString(data));
     }
     return;
   }
