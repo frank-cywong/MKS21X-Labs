@@ -20,6 +20,10 @@ public class Tester{
     System.out.println(b.addWordHorizontal("testing",0,0));
     System.out.println(b.addWordVertical("inteermediate",0,4));
     System.out.println(b.addWordHorizontal("atest",6,2));
+    System.out.println(b.addWordDiagonal("atest",7,0));
+    for(int i = 6; i <= 11; i++){
+      b.addWordHorizontal("tea",i,1);
+    }
     System.out.println(b);
   }
   public static void main(String[] args){
@@ -42,6 +46,8 @@ public class Tester{
     b = new WordSearch(4,7);
     basicTest2(b);
     b = new WordSearch(4,4);
+    basicTest2(b);
+    b = new WordSearch(13,5);
     basicTest2(b);
   }
 }
