@@ -100,6 +100,39 @@ public class WordSearch{
       return true;
     }
 
+    /**Attempts to add a given word to the specified position of the WordGrid.
+     *The word is added from top left towards the bottom right, it must fit on the board,
+     *and must have a corresponding letter to match any letters that it overlaps.
+     *
+     *@param word is any text to be added to the word grid.
+     *@param row is the vertical locaiton of where you want the word to start.
+     *@param col is the horizontal location of where you want the word to start.
+     *@return true when the word is added successfully. When the word doesn't fit,
+     *or there are overlapping letters that do not match, then false is returned
+     *and the board is not modified.
+     */
+    public boolean addWordDiagonal(String word,int row, int col){
+      if(row >= data.length || col >= data[row].length){ // invalid row/col values
+        return false;
+      }
+      if((row + word.length() > data.length) || (col + word.length() > data[row].length)){ // word too long to fit
+        //System.out.println("test2");
+        return false;
+      }
+      for(int i = 0; i < word.length(); i++){
+        if(data[row+i][col+i] != '_' && data[row+i][col+i] != word.charAt(i)){ // overlapping word not fitting
+          //System.out.println("test3"); - debug lines
+          //System.out.println(i);
+          //System.out.println(data[row+i][col+i]);
+          return false;
+        }
+      }
+      for(int i = 0; i < word.length(); i++){
+        data[row+i][col+i] = word.charAt(i);
+      }
+      return true;
+    }
+
     /**Reverses a string character by character.
     *@param s is the input String.
     *@return a String which is the input string but with its characters' reversed.

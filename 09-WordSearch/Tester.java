@@ -4,6 +4,7 @@ public class Tester{
     System.out.println(b.addWordHorizontal("foo",1,1));
     System.out.println(b.addWordVertical("bar",1,1));
     System.out.println(b.addWordVertical("far",1,1));
+    System.out.println(b.addWordDiagonal("oooo",1,3));
     System.out.println(b);
   }
   public static void main(String[] args){
@@ -19,5 +20,7 @@ public class Tester{
     basicTest(b); // true, false, true
     b = new WordSearch(3,4);
     basicTest(b); // true, false, false
+    b = new WordSearch(5,7);
+    basicTest(b); // true, false, true, true
   }
 }
