@@ -1,4 +1,5 @@
 public class Tester{
+  /*
   public static void basicTest(WordSearch b){
     System.out.println(b); // tests toString
     System.out.println(b.addWordHorizontal("foo",1,1));
@@ -26,8 +27,25 @@ public class Tester{
     }
     System.out.println(b);
   }
+  */
+  public static void omniTest(WordSearch b){
+    for(int i = -1; i <= 1; i++){
+      for(int j = -1; j <= 1; j++){
+        b.addWord("testing",6,6,i,j);
+      }
+    }
+    b.addWord("gagbgcgdgegfk",0,0,1,0);
+    b.addWord("gagbgcgdgegfgg",0,0,1,0);
+    b.addWord("argon",15,2,-1,1);
+    b.addWord("carbon",16,5,-1,0);
+    for(int i = 14; i < 20; i++){
+      b.addWord("aaaaaaa",i,0,0,1);
+    }
+    System.out.println(b);
+  }
   public static void main(String[] args){
     WordSearch b = new WordSearch(0,0);
+    /*
     basicTest(b);
     b = new WordSearch(1,0);
     basicTest(b);
@@ -49,5 +67,15 @@ public class Tester{
     basicTest2(b);
     b = new WordSearch(13,5);
     basicTest2(b);
+    */
+    omniTest(b);
+    b = new WordSearch(1,0);
+    omniTest(b);
+    b = new WordSearch(0,2);
+    omniTest(b);
+    b = new WordSearch(13,13);
+    omniTest(b);
+    b = new WordSearch(20,7);
+    omniTest(b);
   }
 }

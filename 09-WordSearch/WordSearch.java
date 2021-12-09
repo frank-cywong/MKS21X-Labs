@@ -40,7 +40,6 @@ public class WordSearch{
       return output;
     }
 
-
     /**Attempts to add a given word to the specified position of the WordGrid.
      *The word is added from left to right, must fit on the WordGrid, and must
      *have a corresponding letter to match any letters that it overlaps.
@@ -52,6 +51,7 @@ public class WordSearch{
      * or there are overlapping letters that do not match, then false is returned
      * and the board is NOT modified.
      */
+    /*
     public boolean addWordHorizontal(String word,int row, int col){
       if(row >= data.length || col >= data[row].length){
         return false;
@@ -69,7 +69,7 @@ public class WordSearch{
       }
       return true;
     }
-
+    */
 
    /**Attempts to add a given word to the specified position of the WordGrid.
      *The word is added from top to bottom, must fit on the WordGrid, and must
@@ -82,6 +82,7 @@ public class WordSearch{
      *or there are overlapping letters that do not match, then false is returned.
      *and the board is NOT modified.
      */
+    /*
     public boolean addWordVertical(String word,int row, int col){
       if(row >= data.length || col >= data[row].length){
         return false;
@@ -99,7 +100,7 @@ public class WordSearch{
       }
       return true;
     }
-
+    */
     /**Attempts to add a given word to the specified position of the WordGrid.
      *The word is added from top left towards the bottom right, it must fit on the board,
      *and must have a corresponding letter to match any letters that it overlaps.
@@ -111,6 +112,7 @@ public class WordSearch{
      *or there are overlapping letters that do not match, then false is returned
      *and the board is not modified.
      */
+    /*
     public boolean addWordDiagonal(String word,int row, int col){
       if(row >= data.length || col >= data[row].length){ // invalid row/col values
         return false;
@@ -132,6 +134,7 @@ public class WordSearch{
       }
       return true;
     }
+    */
 
     /**Attempts to add a given word in an arbitrary direction.
      *Direction is determined using colinc and rolinc which represent the distance between two consecutive characters. If both rowinc and colinc are 0, the word will not be inserted.
@@ -167,6 +170,7 @@ public class WordSearch{
     *@param s is the input String.
     *@return a String which is the input string but with its characters' reversed.
     */
+    /*
     public String reverse(String s){
       String output = "";
       for(int i = s.length() - 1; i >= 0; i--){
@@ -174,4 +178,5 @@ public class WordSearch{
       }
       return output;
     }
+    */
 }
