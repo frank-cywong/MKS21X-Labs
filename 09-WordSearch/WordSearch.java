@@ -133,6 +133,22 @@ public class WordSearch{
       return true;
     }
 
+    /**Attempts to add a given word in an arbitrary direction.
+     *Direction is determined using a number from 0 to 7 (inclusive), with 0 referring to the string being added
+     *from the bottom to top, with the provided position being the bottom, and 1-7 being represented by the tip
+     *of the word being rotated 45*(direction) degrees such that, for example, 2 being equal to addWordHorizontal,
+     *3 being equal to addWordDiagonal, 4 being equal to addWordVertical, and 6 referring to adding the word from
+     *back to front towards the left.
+     *@param word is the word to be added to the puzzle.
+     *@param row is the row to start adding the word to.
+     *@param col is the column to start adding the word to.
+     *@param dir is the direction to add the word in relative to the start point, as specified in the description above.
+     *@return true if the word was added successfully, false if it wasn't added successfully and the board wasn't modified.
+     */
+    public boolean addWord(String word, int row, int col, int dir){
+      
+    }
+
     /**Reverses a string character by character.
     *@param s is the input String.
     *@return a String which is the input string but with its characters' reversed.
