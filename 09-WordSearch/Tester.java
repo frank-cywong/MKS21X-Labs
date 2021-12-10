@@ -83,5 +83,9 @@ public class Tester{
     b = new WordSearch(20,7);
     omniTest(b);
     */
+    WordSearch b = new WordSearch(0,0,"test.in");
+    WordSearch b = new WordSearch(1,0,"test.in");
+    WordSearch b = new WordSearch(0,2,"test.in");
+    WordSearch b = new WordSearch(3,3,"test.in");
   }
 }
