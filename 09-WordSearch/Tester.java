@@ -28,6 +28,7 @@ public class Tester{
     System.out.println(b);
   }
   */
+  /*
   public static void omniTest(WordSearch b){
     for(int i = -1; i <= 1; i++){
       for(int j = -1; j <= 1; j++){
@@ -45,8 +46,9 @@ public class Tester{
     b.addWord("abc",13,1,1,-1);
     System.out.println(b);
   }
+  */
   public static void main(String[] args){
-    WordSearch b = new WordSearch(0,0);
+    //WordSearch b = new WordSearch(0,0);
     /*
     basicTest(b);
     b = new WordSearch(1,0);
@@ -70,6 +72,7 @@ public class Tester{
     b = new WordSearch(13,5);
     basicTest2(b);
     */
+    /*
     omniTest(b);
     b = new WordSearch(1,0);
     omniTest(b);
@@ -79,5 +82,6 @@ public class Tester{
     omniTest(b);
     b = new WordSearch(20,7);
     omniTest(b);
+    */
   }
 }

@@ -1,5 +1,16 @@
+import java.util.*;
+import java.io.*;
 public class WordSearch{
     private char[][]data;
+
+    //the random seed used to produce this WordSearch
+    private int seed;
+
+    //a random Object to unify your random calls
+    private Random randgen;
+
+    //all words that were successfully added get moved into wordsAdded.
+    private ArrayList<String>wordsAdded;
 
     /**Initialize the grid to the size specified
      *and fill all of the positions with '_'
@@ -9,6 +20,17 @@ public class WordSearch{
     public WordSearch(int rows,int cols){
       data = new char[rows][cols];
       clear();
+    }
+
+    public WordSearch(int rows, int cols, String fileName){
+      this(rows, cols, fileName, (new Random()).nextInt());
+    }
+
+    public WordSearch(int rows, int cols, String fileName, int seed){
+      this.seed = seed;
+      randgen = new Random(seed);
+      wordsAdded = new ArrayList<String>();
+      addAllWords(fileName);
     }
 
     /**Set all values in the WordSearch to underscores'_'*/
@@ -49,7 +71,7 @@ public class WordSearch{
      *@param colinc is the vertical increment for each character, which can be an integer between -1 and 1.
      *@return true if the word was added successfully, false if it wasn't added successfully, or if both rowinc and colinc are 0, and the board wasn't modified.
      */
-    public boolean addWord(String word, int row, int col, int rowinc, int colinc){
+    private boolean addWord(String word, int row, int col, int rowinc, int colinc){
       if(rowinc == 0 && colinc == 0){ // invalid rowinc-colinc combination
         return false;
       }
@@ -68,6 +90,26 @@ public class WordSearch{
         data[row+i*rowinc][col+i*colinc] = word.charAt(i);
       }
       return true;
+    }
+
+    private void addAllWords(String filename){
+      try{
+        File f = new File(filename);
+        Scanner in = new Scanner(f);
+        String temp;
+        boolean tempbool;
+        while(in.hasNextLine()){
+          temp = in.nextLine();
+          tempbool = false;
+          for(int i = 0 ; i < 2000; i++){
+            tempbool = addWord(temp,randgen.nextInt(data.length),randgen.nextInt(data[0].length),randgen.nextInt(3)-1,randgen.nextInt(3)-1);
+            if(tempbool){
+              wordsAdded.add(temp);
+              break;
+            }
+          }
+        }
+      } catch (FileNotFoundException e){}
     }
 
     /**Attempts to add a given word to the specified position of the WordGrid.
