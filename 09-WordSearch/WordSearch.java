@@ -97,7 +97,7 @@ public class WordSearch{
         File f = new File(filename);
         Scanner in = new Scanner(f);
         String temp;
-        boolean tempbool;
+        boolean tempbool; 
         while(in.hasNextLine()){
           temp = in.nextLine();
           tempbool = false;
