@@ -41,6 +41,8 @@ public class Tester{
     for(int i = 14; i < 20; i++){
       b.addWord("aaaaaaa",i,0,0,1);
     }
+    b.addWord("at",16,1,0,-1);
+    b.addWord("abc",13,1,1,-1);
     System.out.println(b);
   }
   public static void main(String[] args){

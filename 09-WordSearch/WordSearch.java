@@ -40,6 +40,36 @@ public class WordSearch{
       return output;
     }
 
+    /**Attempts to add a given word in an arbitrary direction.
+     *Direction is determined using colinc and rolinc which represent the distance between two consecutive characters. If both rowinc and colinc are 0, the word will not be inserted.
+     *@param word is the word to be added to the puzzle.
+     *@param row is the row to start adding the word to.
+     *@param col is the column to start adding the word to.
+     *@param rowinc is the horizontal increment for each character, which can be an integer between -1 and 1.
+     *@param colinc is the vertical increment for each character, which can be an integer between -1 and 1.
+     *@return true if the word was added successfully, false if it wasn't added successfully, or if both rowinc and colinc are 0, and the board wasn't modified.
+     */
+    public boolean addWord(String word, int row, int col, int rowinc, int colinc){
+      if(rowinc == 0 && colinc == 0){ // invalid rowinc-colinc combination
+        return false;
+      }
+      if(row >= data.length || col >= data[row].length){ // invalid row/col values
+        return false;
+      }
+      if(((row + word.length() * rowinc) > data.length) || ((row + word.length() * rowinc) < -1) || ((col + word.length() * colinc) > data[row].length) || ((col + word.length() * colinc) < -1)){ // out of bounds
+        return false;
+      }
+      for(int i = 0; i < word.length(); i++){
+        if(data[row+i*rowinc][col+i*colinc] != '_' && data[row+i*rowinc][col+i*colinc] != word.charAt(i)){ //overlapping word that is invalid
+          return false;
+        }
+      }
+      for(int i = 0; i < word.length(); i++){ // actually fill in the word
+        data[row+i*rowinc][col+i*colinc] = word.charAt(i);
+      }
+      return true;
+    }
+
     /**Attempts to add a given word to the specified position of the WordGrid.
      *The word is added from left to right, must fit on the WordGrid, and must
      *have a corresponding letter to match any letters that it overlaps.
@@ -135,36 +165,6 @@ public class WordSearch{
       return true;
     }
     */
-
-    /**Attempts to add a given word in an arbitrary direction.
-     *Direction is determined using colinc and rolinc which represent the distance between two consecutive characters. If both rowinc and colinc are 0, the word will not be inserted.
-     *@param word is the word to be added to the puzzle.
-     *@param row is the row to start adding the word to.
-     *@param col is the column to start adding the word to.
-     *@param rowinc is the horizontal increment for each character, which can be an integer between -1 and 1.
-     *@param colinc is the vertical increment for each character, which can be an integer between -1 and 1.
-     *@return true if the word was added successfully, false if it wasn't added successfully, or if both rowinc and colinc are 0, and the board wasn't modified.
-     */
-    public boolean addWord(String word, int row, int col, int rowinc, int colinc){
-      if(rowinc == 0 && colinc == 0){ // invalid rowinc-colinc combination
-        return false;
-      }
-      if(row >= data.length || col >= data[row].length){ // invalid row/col values
-        return false;
-      }
-      if(((row + word.length() * rowinc) > data.length) || ((col + word.length() * colinc) > data[row].length)){ // out of bounds
-        return false;
-      }
-      for(int i = 0; i < word.length(); i++){
-        if(data[row+i*rowinc][col+i*colinc] != '_' && data[row+i*rowinc][col+i*colinc] != word.charAt(i)){ //overlapping word that is invalid
-          return false;
-        }
-      }
-      for(int i = 0; i < word.length(); i++){ // actually fill in the word
-        data[row+i*rowinc][col+i*colinc] = word.charAt(i);
-      }
-      return true;
-    }
 
     /**Reverses a string character by character.
     *@param s is the input String.
