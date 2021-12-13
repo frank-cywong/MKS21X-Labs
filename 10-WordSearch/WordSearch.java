@@ -9,8 +9,19 @@ public class WordSearch{
   //assume a rectangular grid
   private void addAllWords(String filename){
     ArrayList<String> wordsToAdd = loadWordsFromFile(filename);
-    //You are writing this
-
+    boolean tempbool = false;
+    while(wordsToAdd.size() != 0){
+      int index = rng.nextInt(wordsToAdd.size());
+      String wordToAdd = wordsToAdd.get(i);
+      tempbool = false;
+      for(int i = 0; i < 2000; i++){
+        tempbool = addWord(wordToAdd,rng.nextInt(data.length),rng.nextInt(data[0].length),rng.nextInt(3)-1,rng.nextInt(3)-1);
+        if(tempbool){
+          break;
+        }
+      }
+      wordsToAdd.remove(i);
+    }
   }
 
   public WordSearch(int rows,int cols, String fileName){
@@ -102,5 +113,16 @@ public class WordSearch{
     }
     ans += "\nseed: "+seed;
     return ans;
+  }
+
+  public static void main(String[] args){
+    WordSearch ws;
+    if(args.length >= 5){
+      ws = new WordSearch(Integer.parseInt(args[0]), Integer.parseInt(args[1]), args[2], Integer.parseInt(args[4]));
+      ws.fillInRandomLetters();
+    } else {
+      ws = new WordSearch(Integer.parseInt(args[0]), Integer.parseInt(args[1]), args[2]);
+    }
+    System.out.println(ws);
   }
 }
