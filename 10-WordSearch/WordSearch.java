@@ -12,15 +12,15 @@ public class WordSearch{
     boolean tempbool = false;
     while(wordsToAdd.size() != 0){
       int index = rng.nextInt(wordsToAdd.size());
-      String wordToAdd = wordsToAdd.get(i);
+      String wordToAdd = wordsToAdd.get(index);
       tempbool = false;
       for(int i = 0; i < 2000; i++){
-        tempbool = addWord(wordToAdd,rng.nextInt(data.length),rng.nextInt(data[0].length),rng.nextInt(3)-1,rng.nextInt(3)-1);
+        tempbool = addWord(wordToAdd,rng.nextInt(grid.length),rng.nextInt(grid[0].length),rng.nextInt(3)-1,rng.nextInt(3)-1);
         if(tempbool){
           break;
         }
       }
-      wordsToAdd.remove(i);
+      wordsToAdd.remove(index);
     }
   }
 
@@ -115,13 +115,29 @@ public class WordSearch{
     return ans;
   }
 
+  private char randChar(){
+    return (char)(rng.nextInt(26) + 'A');
+  }
+
+  public void fillInRandomLetters(){
+    for(int i = 0; i < grid.length; i++){
+      for(int j = 0; j < grid[i].length; j++){
+        if(grid[i][j] == '_'){
+          grid[i][j] = randChar();
+        }
+      }
+    }
+  }
+
   public static void main(String[] args){
     WordSearch ws;
     if(args.length >= 5){
       ws = new WordSearch(Integer.parseInt(args[0]), Integer.parseInt(args[1]), args[2], Integer.parseInt(args[4]));
-      ws.fillInRandomLetters();
     } else {
       ws = new WordSearch(Integer.parseInt(args[0]), Integer.parseInt(args[1]), args[2]);
+    }
+    if(Integer.parseInt(args[3]) == 0){
+      ws.fillInRandomLetters();
     }
     System.out.println(ws);
   }
