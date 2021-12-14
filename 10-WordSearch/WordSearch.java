@@ -12,15 +12,14 @@ public class WordSearch{
     boolean tempbool = false;
     while(wordsToAdd.size() != 0){
       int index = rng.nextInt(wordsToAdd.size());
-      String wordToAdd = wordsToAdd.get(index);
+      String wordToAdd = wordsToAdd.remove(index);
       tempbool = false;
-      for(int i = 0; i < 2000; i++){
+      for(int i = 0; i < 500; i++){
         tempbool = addWord(wordToAdd,rng.nextInt(grid.length),rng.nextInt(grid[0].length),rng.nextInt(3)-1,rng.nextInt(3)-1);
         if(tempbool){
           break;
         }
       }
-      wordsToAdd.remove(index);
     }
   }
 
