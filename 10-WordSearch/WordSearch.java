@@ -9,14 +9,11 @@ public class WordSearch{
   //assume a rectangular grid
   private void addAllWords(String filename){
     ArrayList<String> wordsToAdd = loadWordsFromFile(filename);
-    boolean tempbool = false;
     while(wordsToAdd.size() != 0){
       int index = rng.nextInt(wordsToAdd.size());
       String wordToAdd = wordsToAdd.remove(index);
-      tempbool = false;
       for(int i = 0; i < 500; i++){
-        tempbool = addWord(wordToAdd,rng.nextInt(grid.length),rng.nextInt(grid[0].length),rng.nextInt(3)-1,rng.nextInt(3)-1);
-        if(tempbool){
+        if(addWord(wordToAdd,rng.nextInt(grid.length),rng.nextInt(grid[0].length),rng.nextInt(3)-1,rng.nextInt(3)-1)){
           break;
         }
       }
