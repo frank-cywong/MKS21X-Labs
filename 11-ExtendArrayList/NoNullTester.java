@@ -1,6 +1,6 @@
 public class NoNullTester{
   public static void main(String[] args){
-    NoNullArrayList<String> n = new NoNullArrayList<String>();
+    NoNullArrayList<String> n = new NoNullArrayList<String>(1);
     n.add("test");
     n.add(0,"value0");
     n.set(1,"value1");

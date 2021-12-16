@@ -3,6 +3,9 @@ public class NoNullArrayList<T> extends ArrayList<T>{
   public NoNullArrayList(){
     super();
   }
+  public NoNullArrayList(int c){
+    super(c);
+  }
   public boolean add(T e){
     if(e == null){
       throw new IllegalArgumentException("Cannot add null to NoNullArrayList.");
