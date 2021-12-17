@@ -7,7 +7,8 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
   @Override
   public boolean add(T v){
-    return super.add(whereToPlace(v), v);
+    super.add(whereToPlace(v), v);
+    return true;
   }
   @Override
   public void add(int i, T v){
@@ -17,5 +18,14 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   public T set(int i, T v){
     T toreturn = remove(i);
     add(v);
+    return toreturn;
+  }
+  private int whereToPlace(T v){
+    for(int i = 0; i < super.size(); i++){
+      if(v.compareTo(super.get(i)) < 0){
+        return i;
+      }
+    }
+    return super.size();
   }
 }
