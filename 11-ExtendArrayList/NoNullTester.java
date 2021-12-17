@@ -24,5 +24,10 @@ public class NoNullTester{
       System.out.println("Successfully failed to add null");
     }
     System.out.println(n);
+    OrderedArrayList<String> o = new OrderedArrayList<String>();
+    o.add("test1");
+    o.add("test2");
+    o.set(1,"test0");
+    System.out.println(o);
   }
 }
