@@ -21,6 +21,9 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     return toreturn;
   }
   private int whereToPlace(T v){
+    if(v == null){
+      return 0;
+    }
     for(int i = 0; i < super.size(); i++){
       if(v.compareTo(super.get(i)) < 0){
         return i;
