@@ -1,4 +1,6 @@
+import java.util.Scanner;
 public class Game{
+  static int[] numbers = new int[4];
   public static void border(int w, int h){
     String ws = "";
     final String HORIZONTALCHAR = "-";
@@ -22,18 +24,34 @@ public class Game{
       }
     }
   }
-  public static void main(String[] args){
+  public static void doinputloop(){
+    Scanner in = new Scanner(System.in);
+    while(true){
+      String input = in.nextLine();
+      if(input.equals("")){
+        redraw();
+        continue;
+      }
+      if(input.equals("q") || input.equals("quit")){
+        return;
+      }
+      randomisenumbers();
+      redraw();
+    }
+  }
+  public static void redraw(){
     Text.clear();
     Text.go(1,1);
     border(80,30);
-    int[] temp = new int[4];
-    for(int i = 0; i < temp.length; i++){
-      temp[i] = (int)(Math.random() * 100);
-    }
+    redrawnumbers();
+    Text.go(31,1);
+    System.out.print(">");
+  }
+  public static void redrawnumbers(){
     int sc = 2;
-    int inc = 78 / 4;
-    for(int i = 0; i < temp.length; i++){
-      int val = temp[i];
+    int inc = 78 / numbers.length;
+    for(int i = 0; i < numbers.length; i++){
+      int val = numbers[i];
       Text.go(2, sc);
       if(val < 25){
         System.out.print(Text.colorize(""+val, Text.RED));
@@ -44,6 +62,16 @@ public class Game{
       }
       sc += inc;
     }
-    Text.go(31,1);
+  }
+  public static void randomisenumbers(){
+    numbers = new int[4];
+    for(int i = 0; i < numbers.length; i++){
+      numbers[i] = (int)(Math.random() * 100);
+    }
+  }
+  public static void main(String[] args){
+    randomisenumbers();
+    redraw();
+    doinputloop(); // just for readability
   }
 }
