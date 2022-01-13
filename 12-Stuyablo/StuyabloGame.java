@@ -56,6 +56,7 @@ public class StuyabloGame{
     for(int i = 0; i < party.size(); i++){
       drawText(party.get(i).getName(), startRow, curcol, false);
       drawText(""+party.get(i).getHP(), startRow+1, curcol, true);
+      curcol += inccol;
     }
   }
 
