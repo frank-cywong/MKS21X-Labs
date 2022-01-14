@@ -14,19 +14,19 @@ public class Wizard extends Adventurer {
     setMana(mana);
   }
 
-  public void attack(Damageable other){
+  public String attack(Damageable other){
     int damage = 5 + (int)(mana * Math.random());
     other.applyDamage(damage);
     setMana(getMana()+1);
-    System.out.println(this + " attacked " + other + " for " + damage + " damage!");
+    return(this + " attacked " + other + " for " + damage + " damage!");
   }
 
-  public void specialAttack(Damageable other){
+  public String specialAttack(Damageable other){
     int damage = 10 + (int)(mana * mana * Math.random()) / 2;
     setHP(getHP() + damage / 5);
     other.applyDamage(damage);
     setMana(0);
-    System.out.println(this + " attacked " + other + " for " + damage + " damage, and healed " + damage / 5 + " HP!");
+    return(this + " attacked " + other + " for " + damage + " damage, and healed " + damage / 5 + " HP!");
   }
 
   public void setMana(int m){

@@ -12,8 +12,10 @@ public class StuyabloGame{
   public static void main(String[] args) {
     run();
   }
-
   public static void border(int w, int h){
+    border(w, h, 1, 1);
+  }
+  public static void border(int w, int h, int topleftw, int toplefth){ // topleftw and toplefth 1 indexed
     String ws = "";
     ws += CORNERCHAR;
     for(int i = 0; i < (w - 2); i++){
@@ -22,11 +24,13 @@ public class StuyabloGame{
     ws += CORNERCHAR;
     for(int i = 1; i <= h; i++){
       if(i == 1 || i == h){
+        Text.go(i + toplefth - 1, topleftw);
         System.out.println(Text.colorize(ws, BACKGROUND_COLOR, BORDER_COLOR));
       }
       else {
+        Text.go(i + toplefth - 1, topleftw);
         System.out.print(Text.colorize(VERTICALCHAR, BACKGROUND_COLOR, BORDER_COLOR));
-        Text.go(i, w);
+        Text.go(i + toplefth - 1, w + topleftw - 1);
         System.out.println(Text.colorize(VERTICALCHAR, BACKGROUND_COLOR, BORDER_COLOR));
       }
     }
@@ -90,6 +94,7 @@ public class StuyabloGame{
     Text.clear();
     Text.go(1,1);
     border(WIDTH, HEIGHT);
+    border(WIDTH, HEIGHT - 8, 1, 5);
   }
 
   public static void run(){
@@ -133,15 +138,17 @@ public class StuyabloGame{
       //display event based on last turn's input
       if(partyTurn){
         //Process user input:
-        if(input.equals("attack")){
+        if(input.equals("attack") || input.equals("")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+          drawText(party.get(whichPlayer).attack(enemies.get(0)),10);
         }
         else if(input.equals("special")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+          drawText(party.get(whichPlayer).specialAttack(enemies.get(0)),10);
         }
         whichPlayer++;
 
@@ -149,9 +156,9 @@ public class StuyabloGame{
 
         if(whichPlayer < party.size()){
           drawText("Enter command for "+party.get(whichPlayer)+
-                   ": attack/special/quit",HEIGHT/2);
+                   ": attack/special/quit",HEIGHT/2 + 5);
         }else{
-          drawText("press enter to see monster's turn",HEIGHT/2);
+          drawText("press enter to see monster's turn",HEIGHT/2 + 5);
           partyTurn = false;
         }
       }else{
@@ -177,7 +184,7 @@ public class StuyabloGame{
 
       //display current state of all Adventurers
       drawParty(party,2);
-      drawParty(enemies,HEIGHT-5);
+      drawParty(enemies,HEIGHT-3);
 
       //Draw the prompt
       Text.reset();
