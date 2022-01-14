@@ -55,10 +55,14 @@ public class StuyabloGame{
     int curcol = 2;
     int inccol = (WIDTH - 2) / party.size();
     for(int i = 0; i < party.size(); i++){
-      drawText(party.get(i).getName(), startRow, curcol);
-      int hp = party.get(i).getHP();
-      int maxhp = party.get(i).getmaxHP();
-      drawText(hp+"/"+maxhp, startRow+1, curcol, ((float)hp)/maxhp);
+      Adventurer lcl = party.get(i);
+      drawText(lcl.getName(), startRow, curcol);
+      int sp = lcl.getSpecial();
+      int maxsp = lcl.getSpecialMax();
+      drawText(lcl.getSpecialName()+":"+sp+"/"+maxsp, startRow+1, curcol, ((float)sp)/maxsp);
+      int hp = lcl.getHP();
+      int maxhp = lcl.getmaxHP();
+      drawText("HP:"+hp+"/"+maxhp, startRow+2, curcol, ((float)hp)/maxhp);
       curcol += inccol;
     }
   }

@@ -56,5 +56,11 @@ public abstract class Adventurer implements Damageable{
 	     this.name = s;
     }
 
+    //return the name of the special resource the class uses
+    public abstract String getSpecialName();
+
+    //return the value of the current and maximum special resource
+    public abstract int getSpecial();
+    public abstract int getSpecialMax();
 
 }

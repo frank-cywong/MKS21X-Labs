@@ -1,5 +1,6 @@
 public class Wizard extends Adventurer {
   private int mana;
+  private int maxMana = 20;
 
   public Wizard(){
     this("Generic Name");
@@ -40,4 +41,17 @@ public class Wizard extends Adventurer {
   public String toString(){
     return "Wizard " + super.toString();
   }
+
+  public String getSpecialName(){
+    return "Mana";
+  }
+
+  public int getSpecial(){
+    return getMana();
+  }
+
+  public int getSpecialMax(){
+    return maxMana;
+  }
+
 }
