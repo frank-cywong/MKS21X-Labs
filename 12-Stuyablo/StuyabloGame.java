@@ -94,6 +94,14 @@ public class StuyabloGame{
     */
   }
 
+  public static void drawTextAttackResult(String s){
+    drawText(s,10);
+  }
+
+  public static void drawTextPrompt(String s){
+    drawText(s, HEIGHT/2 + 5);
+  }
+
   public static void drawScreen(){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
@@ -149,23 +157,22 @@ public class StuyabloGame{
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-          drawText(party.get(whichPlayer).attack(enemies.get(0)),10);
+          drawTextAttackResult(party.get(whichPlayer).attack(enemies.get(0)));
         }
         else if(input.equals("special")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-          drawText(party.get(whichPlayer).specialAttack(enemies.get(0)),10);
+          drawTextAttackResult(party.get(whichPlayer).specialAttack(enemies.get(0)));
         }
         whichPlayer++;
 
 
 
         if(whichPlayer < party.size()){
-          drawText("Enter command for "+party.get(whichPlayer)+
-                   ": attack/special/quit",HEIGHT/2 + 5);
+          drawTextPrompt("Enter command for " + party.get(whichPlayer) + ": attack/special/quit");
         }else{
-          drawText("Press enter to see monster's turn",HEIGHT/2 + 5);
+          drawTextPrompt("Press enter to see monster's turn");
           partyTurn = false;
         }
       }else{
@@ -176,13 +183,14 @@ public class StuyabloGame{
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+          drawTextAttackResult(enemies.get(0).attack(party.get((int)(Math.random() * party.size()))));
         }
 
         //after enemy goes, change back to player's turn.
         partyTurn=true;
         whichPlayer = 0;
         //display which player's turn is next and prompt for action.
-        drawText("Enter command for "+party.get(whichPlayer)+": attack/special/quit",HEIGHT/2);
+        drawTextPrompt("Enter command for " + party.get(whichPlayer) + ": attack/special/quit");
 
         //end the turn.
         turn++;

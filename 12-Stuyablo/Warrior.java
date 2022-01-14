@@ -26,11 +26,11 @@ public class Warrior extends Adventurer {
     }
 
     public String specialAttack(Damageable other){
-	     if(getRage() >= 10){
-  	        int damage = (int)(Math.random()*20)+1;
-            other.applyDamage(damage);
-            setRage(getRage() - 10);
-            return(this + " unleashes his fury upon " + other + " for " + damage + " damage! "+warcry);
+	    if(getRage() >= 10){
+         int damage = (int)(Math.random()*20)+1;
+         other.applyDamage(damage);
+         setRage(getRage() - 10);
+        return(this + " unleashes his fury upon " + other + " for " + damage + " damage! "+warcry);
 	    }
 			return("Not enough rage! " + attack(other));
     }
@@ -50,5 +50,8 @@ public class Warrior extends Adventurer {
 	     this.warcry = warcry;
     }
 
+    public String toString(){
+      return "Warrior " + super.toString();
+    }
 
 }

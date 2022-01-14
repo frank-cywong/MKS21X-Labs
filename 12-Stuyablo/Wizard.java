@@ -38,6 +38,6 @@ public class Wizard extends Adventurer {
   }
 
   public String toString(){
-    return "Generic Wizard " + super.toString();
+    return "Wizard " + super.toString();
   }
 }
