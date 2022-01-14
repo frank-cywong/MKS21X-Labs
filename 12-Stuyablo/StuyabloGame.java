@@ -105,10 +105,13 @@ public class StuyabloGame{
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-
+    enemies.add(new Wizard("Generic E1"));
     //Adventurers you control:
     //Make an ArrayList of Adventurers and add 3 Adventurers to it.
     ArrayList<Adventurer> party = new ArrayList<>();
+    party.add(new Wizard("Generic P1"));
+    party.add(new Warrior("Generic P2"));
+    party.add(new Warrior("Generic P3"));
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
