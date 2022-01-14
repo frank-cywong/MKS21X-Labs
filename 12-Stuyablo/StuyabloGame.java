@@ -36,17 +36,14 @@ public class StuyabloGame{
     }
   }
 
-  public static String conditionalformatting(int val){
-    if(val < 15){
-      return(Text.colorize(""+val, Text.RED));
+  public static String conditionalformatting(String str, float val){
+    if(val <= 0.25){
+      return(Text.colorize(str, Text.RED));
     }
-    if(val < 25){
-      return(Text.colorize(""+val, Text.YELLOW));
+    if(val >= 0.75){
+      return(Text.colorize(str, Text.GREEN));
     }
-    if(val < 50){
-      return(Text.colorize(""+val, Text.WHITE));
-    }
-    return(Text.colorize(""+val, Text.GREEN));
+    return(Text.colorize(str, DEFAULT_TEXT_COLOR));
   }
 
   //Display a List of 1-4 adventurers on the rows row through row+3 (4 rows max)
@@ -58,8 +55,10 @@ public class StuyabloGame{
     int curcol = 2;
     int inccol = (WIDTH - 2) / party.size();
     for(int i = 0; i < party.size(); i++){
-      drawText(party.get(i).getName(), startRow, curcol, false);
-      drawText(""+party.get(i).getHP(), startRow+1, curcol, true);
+      drawText(party.get(i).getName(), startRow, curcol);
+      int hp = party.get(i).getHP();
+      int maxhp = party.get(i).getmaxHP();
+      drawText(hp+"/"+maxhp, startRow+1, curcol, ((float)hp)/maxhp);
       curcol += inccol;
     }
   }
@@ -69,10 +68,17 @@ public class StuyabloGame{
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-    drawText(s, startRow, 2, false);
+    drawText(s, startRow, 2);
   }
 
-  public static void drawText(String s, int startRow, int startCol, boolean format){
+  public static void drawText(String s, int startRow, int startCol){
+    Text.go(startRow,startCol);
+    System.out.print(s);
+  }
+
+  public static void drawText(String s, int startRow, int startCol, float formatval){
+    drawText(conditionalformatting(s, formatval), startRow, startCol);
+    /*
     if(format){
       try{
         int val = Integer.parseInt(s);
@@ -85,6 +91,7 @@ public class StuyabloGame{
     }
     Text.go(startRow,startCol);
     System.out.print(s);
+    */
   }
 
   public static void drawScreen(){
@@ -158,7 +165,7 @@ public class StuyabloGame{
           drawText("Enter command for "+party.get(whichPlayer)+
                    ": attack/special/quit",HEIGHT/2 + 5);
         }else{
-          drawText("press enter to see monster's turn",HEIGHT/2 + 5);
+          drawText("Press enter to see monster's turn",HEIGHT/2 + 5);
           partyTurn = false;
         }
       }else{

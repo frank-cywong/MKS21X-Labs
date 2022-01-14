@@ -23,10 +23,11 @@ public class Wizard extends Adventurer {
 
   public String specialAttack(Damageable other){
     int damage = 10 + (int)(mana * mana * Math.random()) / 2;
-    setHP(getHP() + damage / 5);
+    int toHeal = damage / 5;
+    this.applyDamage(-1 * toHeal);
     other.applyDamage(damage);
     setMana(0);
-    return(this + " attacked " + other + " for " + damage + " damage, and healed " + damage / 5 + " HP!");
+    return(this + " attacked " + other + " for " + damage + " damage, and healed " + toHeal + " HP!");
   }
 
   public void setMana(int m){

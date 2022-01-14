@@ -2,6 +2,7 @@ import java.util.Random;
 public abstract class Adventurer implements Damageable{
     private String name;
     private int HP;
+    private int maxHP;
 
     //Abstract methods are meant to be implemented in child classes.
     public abstract String attack(Damageable other);
@@ -18,6 +19,7 @@ public abstract class Adventurer implements Damageable{
     public Adventurer(String name, int hp){
        this.name = name;
        this.HP = hp;
+       this.maxHP = hp;
     }
 
     //toString method
@@ -32,6 +34,13 @@ public abstract class Adventurer implements Damageable{
 
     public int getHP(){
 	     return HP;
+    }
+
+    public int getmaxHP(){
+      return maxHP;
+    }
+    public void setmaxHP(int newMax){
+      maxHP = newMax;
     }
 
     public void applyDamage(int amount){
