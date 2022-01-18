@@ -76,8 +76,13 @@ public class StuyabloGame{
   }
 
   public static void drawText(String s, int startRow, int startCol){
-    Text.go(startRow,startCol);
-    System.out.print(s);
+    for(int rowCount = 0; rowCount < Math.ceil(((float)(s.length()))/(WIDTH-startCol)); rowCount++){
+      if(rowCount != 0){
+        s = s.substring(WIDTH-startCol);
+      }
+      Text.go(startRow+rowCount,startCol);
+      System.out.print((WIDTH-startCol >= s.length() ? s : s.substring(0, WIDTH-startCol)));
+    }
   }
 
   public static void drawText(String s, int startRow, int startCol, float formatval){
