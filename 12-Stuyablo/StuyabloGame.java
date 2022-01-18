@@ -224,8 +224,4 @@ public class StuyabloGame{
     Text.showCursor();
     Text.go(32,1);
   }
-
-
-
-
 }
