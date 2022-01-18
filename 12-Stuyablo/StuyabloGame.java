@@ -7,7 +7,7 @@ public class StuyabloGame{
   private static final String HORIZONTALCHAR = "-";
   private static final String VERTICALCHAR = "|";
   private static final String CORNERCHAR = "O";
-  private static final int DEFAULT_TEXT_COLOR = Text.WHITE;
+  //private static final int DEFAULT_TEXT_COLOR = Text.WHITE + Text.BRIGHT;
 
   public static void main(String[] args) {
     run();
@@ -43,7 +43,7 @@ public class StuyabloGame{
     if(val >= 0.75){
       return(Text.colorize(str, Text.GREEN));
     }
-    return(Text.colorize(str, DEFAULT_TEXT_COLOR));
+    return str;
   }
 
   //Display a List of 1-4 adventurers on the rows row through row+3 (4 rows max)
