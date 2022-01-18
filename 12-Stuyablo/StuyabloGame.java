@@ -76,6 +76,15 @@ public class StuyabloGame{
   }
 
   public static void drawText(String s, int startRow, int startCol){
+    drawText(s, startRow, startCol, false);
+  }
+
+  public static void drawText(String s, int startRow, int startCol, boolean wrapping){
+    if(!wrapping){
+      Text.go(startRow, startCol);
+      System.out.print(s);
+      return;
+    }
     for(int rowCount = 0; rowCount < Math.ceil(((float)(s.length()))/(WIDTH-startCol)); rowCount++){
       if(rowCount != 0){
         s = s.substring(WIDTH-startCol);
@@ -104,11 +113,11 @@ public class StuyabloGame{
   }
 
   public static void drawTextAttackResult(String s){
-    drawText(s,10);
+    drawText(s, 10, 2, true);
   }
 
   public static void drawTextPrompt(String s){
-    drawText(s, HEIGHT/2 + 5);
+    drawText(s, HEIGHT/2 + 5, 2, true);
   }
 
   public static void drawScreen(){
